@@ -1,0 +1,45 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each datos}}
+        <div class="col-md-3 p-2">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center">
+                        Informacion general
+                    </h3>
+                    <div class="form-group">
+                         <p class="m-2">No. de serie: {{no_serie}}</p>
+                    </div>
+                    <div class="form-group">
+                       <p class="m-2"> Perfil: {{perfil}}</p>
+                    </div>
+                    <div class="form-group">
+                         <p class="m-2">Modelo: {{modelo}}</p>
+                    </div>
+                    <div class="form-group">
+                        <p class="m-2"> Marca: {{marca}}</p>
+                    </div>
+                    <div class="form-group">
+                        <p class="m-2"> Proveedor {{proveedor}}</p>
+                    </div>
+                    <div class="form-group">
+                         <p class="m-2">Administracion general: {{admon_gen}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="container p-4">
+<h2>Pasos para dar de baja/alta equipo de computo</h2>
+<p>Descarga el manual y sigue los pasos. 
+    Aqui abajo esta la explicacion de los puntos</p>
+    <h4>Enlace asignado</h4>
+
+    <h4>Verificar tipo de proveedor</h4>
+    <p>En la parte trasera de tu laptop se encuentra la etiqueta con el nombre de tu proveedor</p>
+    <div><img src="#" alt="tipo proveedor"></div>
+    <a href="/DOCS/123.docx" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="AltaBaja.docx">Descargar manual</a>
+</div>
