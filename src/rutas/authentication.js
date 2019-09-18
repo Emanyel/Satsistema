@@ -44,7 +44,7 @@ router.post('/inicio', passport.authenticate('local.inicio', {
 }));
 
 
-      router.get('/principal', isLoggedIn, (req, res) => {
+      router.get('/principal', /*isLoggedIn*/ (req, res) => {
         res.render('principal');
 
       });  
@@ -54,8 +54,23 @@ router.get('/equipos/computo', /*isLoggedIn ,*/ (req, res)=>{
         res.render('equipos/equipos');
 });
 
-router.post('/equipos/computo', (req, res)=>{
-        
+router.get('/equipos/accesorios', /*isLoggedIn ,*/ (req, res)=>{
+        res.render('usuarios/info_usuario');
+});
+router.get('/equipos/impresoras', /*isLoggedIn ,*/ (req, res)=>{
+        res.render('equipos/impresoras');
+});
+router.get('/index', /*isLoggedIn ,*/ (req, res)=>{
+        res.render('index');
+});
+
+
+                router.get('/cuentas', (req, res)=>{
+                res.render('usuarios/cuentas');
+                });
+
+router.get('/acerca', (req, res)=>{
+   res.render('acerca');     
 });
 
 

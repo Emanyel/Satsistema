@@ -1,13 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="IMAGENES/logotipos SAT-08.svg" id="logo" width="65" height="35" alt="logo sat">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A02140;">
+  <a class="navbar-brand" href="/index">
+    <img src="IMAGENES/logotipos SAT-08.svg" id="logo"  width="190" alt="logo sat">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
-      {{#if user}}
       <li class="nav-item active">
         <a class="nav-link" href="/principal">Principal<span class="sr-only">(current)</span></a>
       </li>
@@ -19,25 +18,25 @@
           Equipo de computo
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Equipos</a>
-          <a class="dropdown-item" href="#">Accesorios</a>
-          <a class="dropdown-item" href="#">Impresoras</a>
+          <a class="dropdown-item" href="/equipos/computo">Equipos</a>
+          <a class="dropdown-item" href="/equipos/accesorios">Accesorios</a>
+          <a class="dropdown-item" href="/equipos/impresoras">Impresoras</a>
         </div>
         <li class="nav-item active">
         <a class="nav-link" href="/logout">Cerrar sesion <span class="sr-only">(current)</span></a>
       </li>
       </li>
-      {{else}}
+   
           <li class="nav-item">
-            <a class="nav-link" href="/inicio">Inicio</a>
+            <a class="nav-link" href="/inicio">INICIO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/registro">Registro</a>
+            <a class="nav-link" href="/registro">REGISTRO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/registro">Acerca de</a>
+            <a class="nav-link" href="/acerca">ACERCA DE</a>
           </li>
-      {{/if}}
+  
       
       
     </ul>
