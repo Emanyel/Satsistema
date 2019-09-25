@@ -18,15 +18,13 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    
-    
     {{!FUENTES PARA ICONOS}}
     <script src="https://kit.fontawesome.com/99235ee215.js"></script>
     <link rel="stylesheet" href="/CSS/styles.css">
     {{! HACE LOS BOTONES REDONDOS}}
     <link rel="stylesheet" type="text/css"
         href="https://cdn.rawgit.com/TheExeLab/spotify-css/374d3afe/app-stylebuild.css">
-{{!SCRIPTS DE BOOTSTRAP}}
+    {{!SCRIPTS DE BOOTSTRAP}}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -38,8 +36,11 @@
     crossorigin="anonymous"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="/CSS/stylesEquipos.css">
-    <link rel="stylesheet" href="/CSS/checkboxes.css">
     <link rel="stylesheet" href="/CSS/portada.css">
+    <!--  jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
     
 </head>
 
@@ -73,6 +74,20 @@
     {{> navigation}}
     {{> mensajes}}        
     {{{ body }}}
+    <script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
+
 </body>
 
 </html>

@@ -37,9 +37,6 @@ body {
 
 }
 
-
-
-
 .form-signin {
   width: 100%;
   font-family: 'Montserrat', sans-serif;
@@ -69,9 +66,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 
 }
-nav.navbar {
-  background-color: #CC1414;
-}
+
 
 .form-label-group>input,
 .form-label-group>label {
