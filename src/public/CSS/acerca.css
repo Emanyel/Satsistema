@@ -1,0 +1,29 @@
+
+.entry{
+    display: flex;
+}
+
+.primeraParte{
+    float: left;
+    width: 22.85714%;
+float: left;
+margin-right: 2.85714%;
+}
+
+.secondPart{
+    float: left;
+    border: 20px;
+    width: 74.28571%;
+margin-right: 2.85714%;
+}
+.name{
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-transform: none !important;
+
+text-shadow: none;
+}
+
