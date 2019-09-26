@@ -2,12 +2,14 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const exphbs = require('express-handlebars');
-const expressValidator = require('express-validator');
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
 const MySQLStore = require('express-mysql-session')(session);
 const bodyParser = require('body-parser');
+const User = require('./links');
+
+const user = new User();
 
 const {database} = require('./keys');
 
@@ -61,7 +63,7 @@ app.use((req, res, next)=>{
 // rutas url del servidor
 app.use(require('./rutas'));
 app.use(require('./rutas/authentication'));
-app.use('/usuarios', require('./rutas/links'));
+app.use('/usuarios', require('./links'));
 
 //public codigo que se puede acceder html, css, js
 app.use(express.static(path.join(__dirname, 'public')));
