@@ -55,7 +55,7 @@ router.get('/equipos/computo', /*isLoggedIn ,*/ (req, res)=>{
 });
 
 router.get('/equipos/accesorios', /*isLoggedIn ,*/ (req, res)=>{
-        res.render('usuarios/info_usuario');
+        res.render('equipos/accesorios');
 });
 router.get('/equipos/impresoras', /*isLoggedIn ,*/ (req, res)=>{
         res.render('equipos/impresoras');
