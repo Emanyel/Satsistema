@@ -1,59 +1,53 @@
 const express = require('express');
 const router = express.Router();
-
-
-const passport = require('passport');
-const { isLoggedIn, isNotLoggedIn } = require('../lib/auth');
+const User = require('../links');
+const user = new User();
 
 //REGISTRAR USUARIO
 
 //ENRUTADOR PARA PEDIR LOS DATOS de registro
-router.get('/registro', isNotLoggedIn, (req,res)=>{
+router.get('/registro', (req,res)=>{
         res.render('auth/registro');
 });
 
-router.post('/registro', isNotLoggedIn, passport.authenticate('local.registro',  {
-                successRedirect: '/inicio',
-                failureRedirect: '/registro',
-                failureFlash: true
-}))
+router.get('/principal', (req, res) => {
+res.render('principal');
 
+});  
 
-
-//INICIAR SESION
-router.get('/inicio', isNotLoggedIn, (req, res)=>{
-        res.render('auth/inicio');
-});
-
-
-router.post('/inicio', passport.authenticate('local.inicio', {
-        successRedirect: '/principal',
-        failureRedirect: '/inicio',
-        failureFlash: true
-        //})//(req, res, next);
-       /* console.log(req.body);
-        req.check('empleado', 'El numero de empleado es necesario').notEmpty();
-        req.check('password', 'La contrasena es necesario').notEmpty();
-        const errors = req.validationErrors();
-        if (errors.length > 0) {
-          req.flash('message', errors[0].msg);
-          res.redirect('/inicio');
-        }*/      
-        
-
-}));
-
-
-      router.get('/principal', /*isLoggedIn*/ (req, res) => {
-        res.render('principal');
-
-      });  
-      
-      //EQUIPOS DE COMPUTO
+//EQUIPOS DE COMPUTO
 router.get('/equipos/computo', /*isLoggedIn ,*/ (req, res)=>{
         res.render('equipos/equipos');
 });
 
+router.get('/inicio', /*isLoggedIn ,*/ (req, res)=>{
+        res.render('auth/inicio');
+});
+
+router.get('/logout', (req, res)=>{
+        req.logOut();
+        res.render('/inicio');
+});
+
+
+<<<<<<< Updated upstream
+      router.get('/principal', /*isLoggedIn*/ (req, res) => {
+        res.render('principal');
+=======
+//LOGIN
+router.post('/inicio', (req, res, next)=>{
+        user.login(req.body.noEmpleado, req.body.password, function(result){
+                if(result){
+                        console.log('Logueado hola' + result.username);
+                }else{
+                        console.log('Usuario y contrasena incorrectos');
+                }
+        });  
+>>>>>>> Stashed changes
+
+});
+
+<<<<<<< Updated upstream
 router.get('/equipos/accesorios', /*isLoggedIn ,*/ (req, res)=>{
         res.render('equipos/accesorios');
 });
@@ -71,11 +65,13 @@ router.get('/index', /*isLoggedIn ,*/ (req, res)=>{
 
 router.get('/acerca', (req, res)=>{
    res.render('acerca');     
+=======
+//REGISTRO
+router.post('/registro', (req, res, next)=>{
+        console.log(req.body);
+>>>>>>> Stashed changes
 });
 
 
-router.get('/logout', isLoggedIn,(req, res)=>{
-        req.logOut();
-        res.render('/inicio');
-});
+
 module.exports = router;
