@@ -12,7 +12,6 @@ router.get('/registro', (req,res)=>{
 
 router.get('/principal', (req, res) => {
 res.render('principal');
-
 });  
 
 //EQUIPOS DE COMPUTO
@@ -30,10 +29,10 @@ router.get('/logout', (req, res)=>{
 });
 
 
-<<<<<<< Updated upstream
       router.get('/principal', /*isLoggedIn*/ (req, res) => {
         res.render('principal');
-=======
+      });
+
 //LOGIN
 router.post('/inicio', (req, res, next)=>{
         user.login(req.body.noEmpleado, req.body.password, function(result){
@@ -43,15 +42,14 @@ router.post('/inicio', (req, res, next)=>{
                         console.log('Usuario y contrasena incorrectos');
                 }
         });  
->>>>>>> Stashed changes
+
 
 });
 
-<<<<<<< Updated upstream
-router.get('/equipos/accesorios', /*isLoggedIn ,*/ (req, res)=>{
+router.get('/equipos/accesorios', (req, res)=>{
         res.render('usuarios/info_usuario');
 });
-router.get('/equipos/impresoras', /*isLoggedIn ,*/ (req, res)=>{
+router.get('/equipos/impresoras', (req, res)=>{
         res.render('equipos/impresoras');
 });
 router.get('/index', /*isLoggedIn ,*/ (req, res)=>{
@@ -65,11 +63,11 @@ router.get('/index', /*isLoggedIn ,*/ (req, res)=>{
 
 router.get('/acerca', (req, res)=>{
    res.render('acerca');     
-=======
+});
+
 //REGISTRO
 router.post('/registro', (req, res, next)=>{
         console.log(req.body);
->>>>>>> Stashed changes
 });
 
 
