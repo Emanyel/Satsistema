@@ -7,7 +7,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const MySQLStore = require('express-mysql-session')(session);
 const bodyParser = require('body-parser');
-const User = require('./links');
+const User = require('./login&register');
 
 const user = new User();
 
@@ -63,7 +63,7 @@ app.use((req, res, next)=>{
 // rutas url del servidor
 app.use(require('./rutas'));
 app.use(require('./rutas/authentication'));
-app.use('/usuarios', require('./links'));
+app.use('/usuarios', require('./login&register'));
 
 //public codigo que se puede acceder html, css, js
 app.use(express.static(path.join(__dirname, 'public')));
