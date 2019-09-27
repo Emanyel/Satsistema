@@ -46,8 +46,14 @@ router.post('/inicio', (req, res, next)=>{
 
 });
 
+<<<<<<< HEAD
 router.get('/equipos/accesorios', (req, res)=>{
         res.render('usuarios/info_usuario');
+=======
+<<<<<<< Updated upstream
+router.get('/equipos/accesorios', /*isLoggedIn ,*/ (req, res)=>{
+        res.render('equipos/accesorios');
+>>>>>>> master
 });
 router.get('/equipos/impresoras', (req, res)=>{
         res.render('equipos/impresoras');
