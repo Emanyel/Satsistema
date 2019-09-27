@@ -37,14 +37,17 @@ app.set('view engine', '.hbs');
  app.use(bodyParser.urlencoded({extended: false}));
 
  app.set('views', path.resolve(__dirname, 'vistas'));
-app.use(session({secret: 'emma', saveUninitialized: false, resave: false}));
+app.use(session({secret: 'emma', saveUninitialized: false, resave: false, cookie: {
+    maxAge: 60 * 1000 * 30
+}}));
 
-app.use(session({
+/*app.use(session({
     secret: 'faztmysqlnodemysql',
     resave: false, //NO SE RENUEVE LA SESION
     saveUninitialized: false, //PARA NO SE VUELVA A ESTABLECER LA SESION
     store: new MySQLStore(database) //EN DONDE GUARDAR LA SESION EN LA BD
-}));
+}));*/
+
 app.use(flash());
 app.use(express.urlencoded({extended: false})); // ACEPTAR DATOS SIMPLES COMO STRING EN LA URL EN EL FORM
 app.use(express.json());

@@ -11,7 +11,7 @@ router.get('/registro', (req,res)=>{
 });
 
 router.get('/principal', (req, res) => {
-res.render('principal');
+        res.render('principal');
 });  
 
 //EQUIPOS DE COMPUTO
@@ -28,8 +28,13 @@ router.get('/logout', (req, res)=>{
         res.render('/inicio');
 });
 
-router.get('/principal', /*isLoggedIn*/ (req, res) => {
-        res.render('principal');
+router.get('/principal',  (req, res) => {
+       let user = req.session.user;
+       if(user){
+               res.render('principal', {opp: req.session.opp, noEmpleado: user.noEmpleado});
+               return;
+       }
+       res.redirect('/index');
 });
 
 router.get('/equipos/accesorios',  (req, res)=>{
@@ -40,6 +45,11 @@ router.get('/equipos/impresoras', (req, res)=>{
         res.render('equipos/impresoras');
 });
 router.get('/index',  (req, res)=>{
+        let user = req.session.user;
+        if(user){
+                res.redirect('/principal');
+                return;
+        }
         res.render('index');
 });
 
@@ -54,9 +64,14 @@ router.get('/acerca', (req, res)=>{
 
 //LOGIN
 router.post('/inicio', (req, res, next)=>{
+        
         user.login(req.body.noEmpleado, req.body.password, function(result){
                 if(result){
-                        res.send('Logueado hola' + result.username);
+                        req.session.user = result;
+                        req.session.opp = 1;
+
+
+                        res.redirect('principal');
                 }else{
                       res.send('Usuario y contrasena incorrectos');
                 }
@@ -69,19 +84,20 @@ router.post('/inicio', (req, res, next)=>{
 router.post('/registro', (req, res, next)=>{
        let userInput = {
                noEmpleado: req.body.noEmpleado,
-               password: req.body.password,
-               password2: req.body.password2
+               password: req.body.password
        }
-       if(userInput.password === userInput.password2){
+       
         user.create(userInput, function(lastId){
                 if(lastId){
-                        res.send('Bienvenido' + userInput.noEmpleado);
+                        req.session.user = result;
+                        req.session.opp = 0;
+                        res.redirect('/principal');
  
                 }else{
                         console.log('Error al crear usuario');
                 }
         });
-       }
+
        
 });
 

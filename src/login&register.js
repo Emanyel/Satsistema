@@ -10,7 +10,7 @@ User.prototype = {
         if(user){
             var field = Number.isInteger(user) ? 'noEmpleado' : 'no_empleado';
         }
-        let sql = `SELECT * FROM  usuarios WHERE ${field} = ?`;
+        let sql = `SELECT * FROM  info_usuario WHERE ${field} = ?`;
 
         pool.query(sql, user, function(err, result){
             if(err) throw err
@@ -20,10 +20,10 @@ User.prototype = {
     },
 //REGISTRAR USUARIO
     create:  function(body, callback){
-        let pass = body.password;
-         body.password =  bcrypt.hashSync(pass, 10);
+        let password = body.password; 
+         body.password =  bcrypt.hashSync(password, 10);
 
-        let sql = 'INSERT INTO usuarios (no_empleado, password, password2 ) VALUES (?, ?, ?)';
+        let sql = 'INSERT INTO info_usuario (no_empleado, password) VALUES (?, ?)';
             var bind= [];
 
             for(prop in body){
@@ -36,10 +36,10 @@ User.prototype = {
             });
     }, 
 
-    login: function(noEmpleado, pass, callback){
+    login: function(noEmpleado, password, callback){
         this.find(noEmpleado, function(user){
                 if(user){
-                    if(bcrypt.compareSync(pass, user.password)){
+                    if(bcrypt.compareSync(password, user.password)){
                         callback(result);
                         return;
                     }

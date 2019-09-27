@@ -42,63 +42,62 @@
     <p>En la parte trasera de tu laptop se encuentra la etiqueta con el nombre de tu proveedor</p>
     <div><img src="#" alt="tipo proveedor"></div>
     <a href="/DOCS/123.docx" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="AltaBaja.docx">Descargar manual</a>
-
-    <div class="container p-4">
-            <h3>Datos de origen</h3>
+    
         <form action="" method="POST">
-            <div class="form-group">
-                Fecha
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Nombre de la localidad">
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Administración general">
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Estado de la Rep.">
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Dirección">
-            </div>
-            <h3>Datos de destino</h3>
-            <div class="form-group">
-                <input type="text" placeholder="Nombre de la localidad">
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Administración general">
-            </div>
-            <div class="form-group">
-                <input type="text"  placeholder="Estado de la Rep." >
-            </div>
-            <div class="form-group">
-                <input type="text" placeholder="Dirección">
-            <div class="form-group">
-                <br>
-                <button type="submit"class="btn btn-success">ENVIAR DATOS</button>
+            <div class="container p-4" id="contenedorForm">
+                <div class="container p-4" id="origen">
+                    <h3>Datos de origen</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre de la localidad" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Administración general" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Estado de la Rep." required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Dirección" required>
+                    </div>
+                </div>
+
+                <div class="container p-4" id="destino">
+                        <h3>Datos de destino</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre de la localidad" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Administración general" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text"  placeholder="Estado de la Rep." required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Dirección" required>
+                    </div>
+                    <div class="form-group">
+                        <br>
+                        <button type="submit"class="btn btn-success">ENVIAR DATOS</button>
+                    </div>
+                </div>
+
+                <div class="container p-4" id="fecha">
+                        <div class="bootstrap-iso">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="form-group"> <!-- Date input -->
+                                    <h3>Fecha</h3>
+                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                </div>
             </div>
         </form>
+    
+            
 
-                    <div class="bootstrap-iso">
-            <div class="container-fluid">
-            <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-
-                <!-- Form code begins -->
-                <form method="post">
-                <div class="form-group"> <!-- Date input -->
-                    <label class="control-label" for="date">Date</label>
-                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-                </div>
-                <div class="form-group"> <!-- Submit button -->
-                    <button class="btn btn-primary " name="submit" type="submit">Submit</button>
-                </div>
-                </form>
-                <!-- Form code ends --> 
-
-                </div>
-            </div>    
-            </div>
-            </div>
+            
     </div>
 </div>
