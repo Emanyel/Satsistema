@@ -1,3 +1,4 @@
+<div class="body">
 <div class="container p-4">
     <div class="row">
         {{#each datos}}
@@ -32,17 +33,18 @@
     </div>
 </div>
 
-<div class="container p-4">
-<h2>Pasos para dar de baja/alta equipo de computo</h2>
-<p>Descarga el manual y sigue los pasos. 
-    Aqui abajo esta la explicacion de los puntos</p>
-    <h4>Enlace asignado</h4>
+    <div class="container p-4" id="cafe">
+        <h2>Pasos para dar de baja/alta equipo de computo</h2>
+        <p>Descarga el manual y sigue los pasos. </p>
+        <h4>Enlace asignado</h4>
+        <div class="form-control" id="enlace"></div>
+        <h4>Verificar tipo de proveedor</h4>
+        <p>En la parte trasera de tu laptop se encuentra la etiqueta con el nombre de tu proveedor</p>
+        <div><img src="#" alt="tipo proveedor"></div>
+        <a href="/DOCS/123.docx" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="AltaBaja.docx">Descargar manual</a>
+        
+    </div>
 
-    <h4>Verificar tipo de proveedor</h4>
-    <p>En la parte trasera de tu laptop se encuentra la etiqueta con el nombre de tu proveedor</p>
-    <div><img src="#" alt="tipo proveedor"></div>
-    <a href="/DOCS/123.docx" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="AltaBaja.docx">Descargar manual</a>
-    
         <form action="" method="POST">
             <div class="container p-4" id="contenedorForm">
                 <div class="container p-4" id="origen">
@@ -94,10 +96,119 @@
                         </div>
                 </div>
             </div>
-        </form>
-    
+        </form>            
+<div class="container p-4" id="cafe">
+    <h3>Verificar datos</h3>
+    <p>Verifica el formulario que a continuación se muestra. Seleccione el equipo que desee reubicar. Da click en corregir si los datos son erróneos.</p>
+    <div class="container p-4" id="containerScroll">
+        <div id="divScroll">
+            <div style="width: 900px; height:200px;">
+            <div style="text-align: left">
+                <img src="/IMAGENES/LogoSat.png" alt="logo Sat" width="90" height="100"/> 
+            </div>  
+            <br>
+            <div class="margen" width="10px">
+            <strong><h3 align="center">FORMATO DE SOLICITUD DE REUBICACION DE SERVICIO SIDyF3</h3></strong>
+            </div>
+            <br>        
+            <div class="container">
+                <p align="right" id="fecha">Fecha de solicitud:</p>
+            </div>
             
+            
+            <div class="margen">
+                <strong><h3 align="center">I.-DATOS GENERALES DEL USUARIO</h3></strong>
+            </div>
+        
+        <div class="flexbox" id="datosGenerales">
+                    <div class="left">
+                        <div>Nombre del Usuario:</div>
+                        <div><p>RFC Corto del Usuario</p></div>
+                        <div><p>Area:</p></div>
+                        <div><p>Nombre Localidad</p></div>
+                        <div><p>Direccion:</p></div>
+                    </div>
+                    
+                            
+                    <div class="left">
+                        <div><p>Extension: </p></div><div class="ext"></div>
+                        <div><p >Num Empleado</p></div><div  class="noEmpleado"></div>
+                        <div><p >Puesto:</p></div><div class="puesto"></div>
+                        <div><p >ID Localidad:</p></div><div class="idLocalidad"></div>
+                    </div>
+            
+        </div>
 
+            <div class="margen">
+                    <strong><font face=constantia><h3 align="center">II.-INFORMACION DEL MOVIMIENTO</h3></strong>
+            </div>
+                
+                <strong><h3 align="left">Fecha del Movimiento </h3></strong><hr width="300" align="center">
+                <strong><h2 align="left">Origen </h2></strong>
+                    <div id="origen">
+
+                        <p align="left">ID Localidad:</p><div></div>
+                        <p align="left">Nombre Localidad</p><div></div> 
+                        <p align="left">Administracion General:</p><div></div>
+                        <p align="left">Area</p><div></div>
+                        <p align="left">Estado:</p><div></div>
+                        <p align="left">Direccion:</p><div></div>
+                    </div>
+                <strong><h2 align="left">Destino</h2></strong> 
+                    <div id="destino">
+                        <div><p>ID Localidad:</p></div><div></div>
+                        <div><p>Nombre Localidad</p></div><div></div> 
+                        <div><p>Administracion General:</p></div><div></div>
+                        <div><p>Area</p></div><div></div>
+                        <div><p>Puesto:</p></div><div></div>
+                        <div><p>Estado:</p></div><div></div>
+                        <div><p>Direccion:</div><div></div>
+                    </div>
+
+
+            <div class="margen">
+                    <strong><h3 align="center">III.-EQUIPOS</h3></strong>
+            </div>
+            <br>
+            <div class="flexbox">
+                <div class="left">
+                    <p>MARCA</p>
+                    <hr width="200" align="left">
+                </div>
+
+                <div class="left">
+                    <p>MODELO</p>
+                    <hr width="200" align="center">
+                </div>
+
+                <div class="left">
+                    <p>Numero de serie ***10 digitos</p>
+                    <hr width="200" align="right">
+                </div>
+            </div>
             
+            
+            <div class="margen">
+                    <strong><h3 align="center">IV.-VISTO BUENO Y APROBACION DEL SADCTI DEL INMUEBLE</h3></strong>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+              <p align="center">Nombre y Firma del SADCTI Responsable del Inmueble</p>
+                <strong><h4 align="left">Nota:</h4></strong>
+                    <div class="margen2">
+                        <p>El uso del equipo es exclusivamente para el desempe&ntildeo de funciones laborales del SAT. El resguardante sera responsable de los bienes asignados, conforme a lo establecido en el Articulo 8, fraccion lll de la Ley Federal de responsabilidades Administrativas de los Servidores Publicos y demas leyes, Normas y Lineamientos aplicables a este rubro.
+                                    "Utilizar los recursos que tenga asignados y las facultades que le hayan sido atribuidas para el desempe&ntildeo de sus funciones, cargo o comision, exclusivamente para los fines a que estan afectos"</p>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div></div>
+                        <p align="center">Nombre y Firma del Usuario Solicitante</p>
+        </div>
+        </div>
     </div>
 </div>

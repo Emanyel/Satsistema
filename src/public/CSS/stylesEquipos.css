@@ -14,10 +14,81 @@
 
 #contenedorForm{
     display: flex;
-    background-color: #DDCBA4;
+    background-color: #A02140;
     border-radius: 20px;
 }
 
 #origen, #destino, #fecha{
    position: left;
 }
+
+#cafe{
+    background-color: #DDCBA4;
+    border-radius: 20px;
+}
+.body{
+    background-color: #d7d1c9;
+}
+#enlace{
+    background-color: #21a042;
+    text-decoration-color: #ffffff; 
+}
+
+
+.margen2{
+    flex-basis: calc(50% - 1rem);
+    border: 0.5px solid black;
+    background-color:rgb(228, 179, 179);
+    padding: 1rem;  
+    } 
+.autorizacion {
+    flex-basis: calc(50% - 1rem);  
+    text-align: center;
+    }
+
+.sangria{
+    margin-top: 20px;
+    }
+
+
+    .margen{
+        flex-basis: calc(50% - 1rem);
+        border: 0.5px solid black;
+        background-color:#D24655;
+        padding: 1rem;  
+    } 
+    .autorizacion {
+                flex-basis: calc(50% - 1rem);  
+                text-align: center;
+            }
+
+   .flexbox{
+        display:flex;
+        justify-content: space-between;
+   }
+   .left{
+       position: left;
+   }
+   .firmas div{
+       flex: 1;
+   }
+
+        .horizontal{
+            display: flex;
+        }
+        .horizontal div{
+            flex: 1;
+        }
+
+        #divScroll {
+            
+                height: 500px;
+                width: auto;
+                overflow: auto;
+                margin: auto;
+                background-color: #ffffff;
+        }
+
+        #containerScroll{
+            justify-content: center;
+        }
