@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-08-2019 a las 23:18:16
+-- Tiempo de generación: 01-10-2019 a las 21:45:16
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -47,6 +47,26 @@ CREATE TABLE `conexion_impresoras` (
   `vpn` int(5) NOT NULL,
   `conectividad` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `datosdf3`
+--
+
+CREATE TABLE `datosdf3` (
+  `id_localidad` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_localidad` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion_localidad` text COLLATE utf8_unicode_ci NOT NULL,
+  `estado_localidad` varchar(15) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `datosdf3`
+--
+
+INSERT INTO `datosdf3` (`id_localidad`, `nombre_localidad`, `direccion_localidad`, `estado_localidad`) VALUES
+('320', 'Subadministración Desconcentrada DF\"3\"', 'Viad. Río de la Piedad 507, Granjas México', 'CDMX');
 
 -- --------------------------------------------------------
 
@@ -226,14 +246,44 @@ CREATE TABLE `info_reportes` (
 
 CREATE TABLE `info_usuario` (
   `no_empleado` int(10) NOT NULL,
-  `rfc` varchar(13) COLLATE utf8_unicode_ci NOT NULL,
-  `nombre` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `a_paterno` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `a_materno` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `puesto` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `admongeneral` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `tipo_firma` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `no_serie` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `rfc` varchar(13) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nombre` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `a_paterno` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `a_materno` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `puesto` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admongeneral` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tipo_firma` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `no_serie` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id_localidad` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reubicacion`
+--
+
+CREATE TABLE `reubicacion` (
+  `id_localidad` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre_localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `estado_localidad` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `admon_gen` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `area_localidad` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `puesto_localidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion_localidad` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `session_id` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `expires` int(11) UNSIGNED NOT NULL,
+  `data` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -251,6 +301,12 @@ ALTER TABLE `conexion_equipos`
 --
 ALTER TABLE `conexion_impresoras`
   ADD PRIMARY KEY (`ip`);
+
+--
+-- Indices de la tabla `datosdf3`
+--
+ALTER TABLE `datosdf3`
+  ADD PRIMARY KEY (`id_localidad`);
 
 --
 -- Indices de la tabla `descripcion_accesorios`
@@ -341,7 +397,14 @@ ALTER TABLE `info_reportes`
 --
 ALTER TABLE `info_usuario`
   ADD PRIMARY KEY (`no_empleado`),
-  ADD KEY `no_serie` (`no_serie`);
+  ADD KEY `no_serie` (`no_serie`),
+  ADD KEY `id_localidad` (`id_localidad`);
+
+--
+-- Indices de la tabla `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`session_id`);
 
 --
 -- Restricciones para tablas volcadas
