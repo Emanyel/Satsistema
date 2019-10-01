@@ -61,6 +61,9 @@ router.get('/acerca', (req, res)=>{
         res.render('acerca');     
 });
 
+router.post('/equipos/computo', (req, res)=>{
+        
+});
 
 //LOGIN
 router.post('/inicio', (req, res, next)=>{
