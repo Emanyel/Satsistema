@@ -37,10 +37,20 @@ body {
 
 }
 
+
 .form-signin {
   width: 100%;
   font-family: 'Montserrat', sans-serif;
 
+}
+#cafe{
+  background-color: #DDCBA4;
+  border-radius: 20px;
+}
+#vino{
+  
+  background-color: #A02140;
+  border-radius: 20px;
 }
 
 .form-signin .btn {

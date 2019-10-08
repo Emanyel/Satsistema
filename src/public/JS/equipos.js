@@ -1,4 +1,14 @@
+const pool = require('./database');
+
 $(document).ready(function(){
+    cargarDatos();
+
+    async function  cargarDatos(){
+        var sql =  await `SELECT no_empleado WHERE id = ?`;
+        var noEmpleado = pool.query(sql);
+        $("#enlace").text(noEmpleado);
+    }
+
 
     $('#form').on('submit', function(e) {
         var form = this;
