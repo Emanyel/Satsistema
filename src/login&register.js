@@ -5,42 +5,48 @@ function User() {};
 
 User.prototype = {
 
-    find: function(user = null, callback)
+    find:  function(user = null, callback)
     {
         if(user){
             var field = Number.isInteger(user) ? 'noEmpleado' : 'no_empleado';
         }
-        let sql = `SELECT * FROM  info_usuario WHERE ${field} = ?`;
+        let sql =  `SELECT * FROM  usuarios WHERE ${field} = ?`;
 
         pool.query(sql, user, function(err, result){
             if(err) throw err
-            callback(result);
-
+            if(result.length){
+                callback(result[0]);
+            }else{
+                callback(result);
+            }
         });
     },
 //REGISTRAR USUARIO
-    create:  function(body, callback){
-        let password = body.password; 
-         body.password =  bcrypt.hashSync(password, 10);
+    create:   function(body, callback){
+        let pwd = body.password; 
+         body.password =  bcrypt.hashSync(pwd, 10);
 
-        let sql = 'INSERT INTO info_usuario (no_empleado, password) VALUES (?, ?)';
             var bind= [];
 
             for(prop in body){
                 bind.push(prop);
             }
 
-            pool.query(sql, bind, function(err, lastId){
+            let sql =  `INSERT INTO usuarios (no_empleado, nombre, puesto, admon_gen, password) VALUES (?, ?, ?, ?, ?)`;
+            pool.query(sql, bind, function(err, result){
                 if(err) throw err;
-                callback(lastId);
+                //REGRESA EL ULTIMO ID INSERTADO SI NO HAY ERROR
+                callback(result.insertId);
             });
     }, 
 
     login: function(noEmpleado, password, callback){
         this.find(noEmpleado, function(user){
                 if(user){
-                    if(bcrypt.compareSync(password, user.password)){
-                        callback(result);
+                    console.log(user);
+                    console.log(password);
+                    if(bcrypt.compare(password, user.password)){
+                        callback(user);
                         return;
                     }
                 }
