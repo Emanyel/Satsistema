@@ -1,5 +1,5 @@
-const pool = require('./database');
 const bcrypt = require('bcrypt');
+const pool = require('./database');
 
 function User() {};
 
