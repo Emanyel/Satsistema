@@ -40,12 +40,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-    <link rel="stylesheet" href="/CSS/styleEquipos.css">
     <link rel="stylesheet" href="/CSS/acerca.css">
-    <link rel="stylesheet" href="/CSS/sucess.css">
     <link rel="stylesheet" href="/CSS/impresoras.css">
-    <script src="/JS/sucess.js"></script>
-    <script src="/JS/index.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="sweetalert2.all.min.js"></script>
@@ -56,41 +52,16 @@
 </head>
 
 <body>
-    <style type="text/css">
-        .elems {
-            margin-bottom: 15px;
-        }
-    </style>
-    <style>
-        #logo {
-            vertical-align:middle;
-        }
-        .navbar-brand span {
-            font-size:2rem;
-            line-height:1.2;
-            font-weight: 200;
-            display:inline-block;
-            vertical-align:middle;
-            padding:0 0 0 15px;
-        }
-        .navbar-brand b {
-            display:block;
-            font-size:50%;
-            line-height:1;
-        }
-        .navbar-nav {
-            margin-left:auto;
-        }
-</style>
+    
+    
     {{> navigation}}
-    {{> mensajes}}        
     {{{ body }}}
     <script>
     $(document).ready(function(){
       var date_input=$('input[name="date"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
       var options={
-        format: 'mm/dd/yyyy',
+        format: 'dd/mm/yyyy',
         container: container,
         todayHighlight: true,
         autoclose: true,

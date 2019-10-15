@@ -6,27 +6,66 @@
             el manual y sigue los pasos.
         </p>
     </div>
+<!--  FORMULARIO DE ENTRADA -->
+
     <div class="container p-4" id="cafe">
+        <form class="form" method="POST" action="/equipos/impresoras">
+            <div class="flexbox">
+                <div class="container p-4" id="destino">
+                        <h3>Informacion de los equipos a reasignar</h3>
+                        <div class="equipos"></div>
+                        <label for=""><strong> Escribe la razon de la reasignacion</strong></label>
+                        <textarea name="" id="" cols="30" rows="4"></textarea>
+                </div>
+                <div class="container p-4">
+                    <h3>Periodo de tiempo</h3>
+                    <p>Selecciona una opcion de las siguientes:</p>
+                    <input type="checkbox" name="" id=""> <label for="">Temporal ( la reasignacion sera por un tiempo no maximo a 3 meses)</label>
+                    <input type="checkbox" name="" id=""> <label for="">Indefinido</label>
+                </div>
+               <div class="container p-4" id="fecha">
+                        <div class="bootstrap-iso">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="form-group"> <!-- Date input -->
+                                    <h3>Fecha</h3>
+                                        <input class="form-control rounded" id="date" name="date" placeholder="Selecciona la fecha de solicitud" type="text"required/>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                </div> 
+            </div>
+            <div>
+                <button  type="submit" class="btn btn-success">ENVIAR DATOS</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <div class="container p-4" id="vino">
         <div class="container p-4" id="containerScroll">
-            <div id="divScroll">
+        <div id="divScroll">
         <div>
-            <img src="logotipos SAT-09.jpg" width="350" height="100">
+            <img src="/IMAGENES/logotipos SAT-08.svg" alt= "Logo sat png "width="350" height="100">
             <center><h1 class="contenedor2 margen">FORMATO DE SOLICITUD DE ALTA CON BAJA SIDYF3</h1></center>
         </div>
     
     <section>
         <ul>
-            <div >
+            <div>
                 <p> Fecha de Solicitud: &nbsp; &nbsp; &nbsp; &nbsp; <input type="date"> <br></p>
                 <p>Numero de Reporte de Baja Equipo Solicitado: </p> 
             </div>
         </ul>
     </section>
 
-    <section>
+     <section>
+    <div>
         <center><h2 class="contenedor2 margen5">I.- DATOS GENERALES DEL USUARIO</h2></center>
-    </section>
-    <section>
+    
+   
         <div class="horizontal">
         <div id="uno">
             <div> Nombre del Usuario:<output type="text">___________________________</output></div>
@@ -52,13 +91,14 @@
         </div>
         <div>Dirección:
                 <output type="text">________________________________________________________________________________________________________________________</output>
-            </div>
+        </div>
+        </div>
     </section>
 
     <section>
         <center><h2 class="contenedor2 margen5">II.- INFORMACION DEL Ó LOS EQUIPO(S) A REASIGNAR</h2></center>
-        <p>SELECCIÓN (Marcar): </p>
-        <ul>
+        
+        <div>SELECCIÓN (Marcar): </div>
             <table>
                 <tr>
                     <th> SERVICIO </th>
@@ -98,7 +138,6 @@
                     </td>
                 </tr>
             </table>
-        </ul>
     </section>
 
     <section>
@@ -149,4 +188,5 @@
             </div>
         </div>
     </div>
+    
 </div>

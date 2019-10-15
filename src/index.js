@@ -4,7 +4,6 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
 //const passport = require('passport');
-const flash = require('connect-flash');
 //const MySQLStore = require('express-mysql-session')(session);
 //const bodyParser = require('body-parser');
 const User = require('./login&register');
@@ -48,7 +47,6 @@ app.use(session({secret: 'emma', saveUninitialized: false, resave: false, cookie
     store: new MySQLStore(database) //EN DONDE GUARDAR LA SESION EN LA BD
 }));*/
 
-app.use(flash());
 app.use(express.urlencoded({extended: false})); // ACEPTAR DATOS SIMPLES COMO STRING EN LA URL EN EL FORM
 /*app.use(express.json());
 app.use(passport.initialize()); //PARA INICIAR PASSPORT

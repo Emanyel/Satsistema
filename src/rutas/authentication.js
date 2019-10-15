@@ -3,8 +3,6 @@ const router = express.Router();
 const User = require('../login&register');
 const user = new User();
 
-//REGISTRAR USUARIO
-
 //ENRUTADOR PARA PEDIR LOS DATOS DE REGISTRO
 router.get('/registro', (req,res)=>{
         res.render('auth/registro');
@@ -13,16 +11,13 @@ router.get('/registro', (req,res)=>{
 router.get('/principal', (req, res) => {
         res.render('principal');
 });  
-
 //EQUIPOS DE COMPUTO
 router.get('/equipos/computo', (req, res)=>{
         res.render('equipos/equipos');
 });
-
 router.get('/inicio', (req, res)=>{
         res.render('auth/inicio');
 });
-
 router.get('/logout', (req, res, next)=>{
         //SI EXISTE ALGUNA SESION
         if(req.session.user){
@@ -32,7 +27,6 @@ router.get('/logout', (req, res, next)=>{
                 });
         }
 });
-
 router.get('/principal',  (req, res) => {
        let user = req.session.user;
        if(user){
@@ -41,7 +35,6 @@ router.get('/principal',  (req, res) => {
        }
        res.redirect('/index');
 });
-
 router.get('/equipos/accesorios',  (req, res)=>{
         res.render('equipos/accesorios');
 
@@ -49,9 +42,18 @@ router.get('/equipos/accesorios',  (req, res)=>{
 router.get('/equipos/impresoras', (req, res)=>{
         res.render('equipos/impresoras');
 });
+router.get('/cuentas', (req, res)=>{
+        res.render('usuarios/cuentas');
+});
+router.get('/acerca', (req, res)=>{
+        res.render('acerca');     
+});
+router.get('/pases/pases', (req, res)=>{
+        res.render('pases/pases');
+});
 router.get('/index',  (req, res)=>{
         let user = req.session.user;
-        //SI EXISTE UNA SESIONLLAMADA USUARIO SIGNIFICA QUE ESTA LOGEADO LO DIRECCIONAMOS A LA PANTALLA PRINCIPAL
+        //SI EXISTE UNA SESION LLAMADA USUARIO SIGNIFICA QUE ESTA LOGEADO LO DIRECCIONAMOS A LA PANTALLA PRINCIPAL
         if(user){
                 res.redirect('/principal');
                 return;
@@ -59,21 +61,10 @@ router.get('/index',  (req, res)=>{
         //SI NO LO LELVAMOS AL INDEX
         res.render('index');
 });
-
-router.get('/cuentas', (req, res)=>{
-        res.render('usuarios/cuentas');
-});
-
-router.get('/acerca', (req, res)=>{
-        res.render('acerca');     
-});
-router.get('/pases/pases', (req, res)=>{
-        res.render('pases/pases');
-});
-
+// ENVIO DE INFO EQUIPOS/COMPUTO
 router.post('/equipos/computo', (req, res)=>{
-        console.log(req.body);
-        
+              
+      console.log(req.body);
 });
 
 //LOGIN
@@ -98,9 +89,6 @@ router.post('/inicio', (req, res, next)=>{
 router.post('/registro', (req, res, next)=>{
        let userInput = {
                noEmpleado: req.body.noEmpleado,
-               nombre:req.body.nombre,
-               puesto: req.body.puesto,
-               admon: req.body.admon,
                password: req.body.password
        }
        

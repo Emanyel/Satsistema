@@ -28,14 +28,14 @@ float: right;
 
 .margen{
     border:1px solid transparent; 
-    background-color: #ff7777; 
+    background-color: #A02140; 
     padding: 10px ;
     align-content: center; 
 }
 
 .margen5{               /*Prueba */
     border:5px solid transparent; 
-    background-color: #ff7777; 
+    background-color: #A02140; 
     padding: 1px;
     align-content: center; 
 }
@@ -46,7 +46,7 @@ float: right;
     background-color: white; 
     padding: 10px ;
     align-content: center;
-
+    
  }
 
  .margen3{

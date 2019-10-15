@@ -43,59 +43,49 @@
         <a href="/DOCS/123.docx" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="AltaBaja.docx">Descargar manual</a>
         
     </div>
-
-        <form id="form" method="POST">
-            <div class="container p-4" id="contenedorForm">
-                <div class="container p-4" id="origen">
-                    <h3>Datos de origen</h3>
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre de la localidad" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Administración general" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Estado de la Rep." required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Dirección" required>
-                    </div>
-                </div>
-
+    <div class="container p-4" id="vino">
+        <form class="form" method="POST" action="/equipos/computo">
+            <div class="flexbox">
                 <div class="container p-4" id="destino">
                         <h3>Datos de destino</h3>
                     <div class="form-group">
-                        <input type="text" placeholder="Nombre de la localidad" required>
+                        <input type="text" name="localidad" placeholder="Nombre de la localidad" class="rounded" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Administración general" required>
+                        <input type="text" name="admon" placeholder="Administración general" class="rounded" required>
                     </div>
                     <div class="form-group">
-                        <input type="text"  placeholder="Estado de la Rep." required>
+                        <input type="text" name="lugar"  placeholder="Estado de la Rep." class="rounded" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Dirección" required>
+                        <input type="text" name="direccion" placeholder="Dirección" class="rounded" required>
                     </div>
                     <div class="form-group">
-                        <br>
-                        <button  type="submit" class="btn btn-success">ENVIAR DATOS</button>
+                        <input type="text" name="area" placeholder="Area" class="rounded" required>
                     </div>
+                    <div class="form-group">
+                        <input type="text" name="puesto" placeholder="Puesto" class="rounded" required>
+                    </div>
+                   
                 </div>
-
-                <div class="container p-4" id="fecha">
+               <div class="container p-4" id="fecha">
                         <div class="bootstrap-iso">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="form-group"> <!-- Date input -->
                                     <h3>Fecha</h3>
-                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
+                                        <input class="form-control rounded" id="date" name="date" placeholder="MM/DD/YYY" type="text"required/>
                                     </div>
                                 </div>
                             </div>    
                         </div>
-                </div>
+                </div> 
             </div>
-        </form>            
+            <div>
+                <button  type="submit" class="btn btn-success">ENVIAR DATOS</button>
+            </div>
+        </form>
+    </div>            
                 <div class="container p-4" id="cafe">
                     <h3>Verificar datos</h3>
                     <p>Verifica el formulario que a continuación se muestra. Seleccione el equipo que desee reubicar. Da click en corregir si los datos son erróneos.</p>
@@ -145,7 +135,6 @@
                                 <strong><h3 align="left">Fecha del Movimiento </h3></strong><hr width="300" align="center">
                                 <strong><h2 align="left">Origen </h2></strong>
                                     <div id="origen">
-
                                         <p align="left">ID Localidad:</p><div></div>
                                         <p align="left">Nombre Localidad</p><div></div> 
                                         <p align="left">Administracion General:</p><div></div>
@@ -155,13 +144,15 @@
                                     </div>
                                 <strong><h2 align="left">Destino</h2></strong> 
                                     <div id="destino">
+                                        {{#each formulario}}
                                         <div><p>ID Localidad:</p></div><div></div>
-                                        <div><p>Nombre Localidad</p></div><div></div> 
-                                        <div><p>Administracion General:</p></div><div></div>
-                                        <div><p>Area</p></div><div></div>
-                                        <div><p>Puesto:</p></div><div></div>
-                                        <div><p>Estado:</p></div><div></div>
-                                        <div><p>Direccion:</div><div></div>
+                                        <div><p>Nombre Localidad</p></div>{{localidad}}<div></div> 
+                                        <div><p>Administracion General:</p></div><div>{{admon}}</div>
+                                        <div><p>Area</p></div><div>{{area}}</div>
+                                        <div><p>Puesto:</p></div><div>{{puesto}}</div>
+                                        <div><p>Estado:</p></div><div>{{lugar}}</div>
+                                        <div><p>Direccion:</div><div>{{direccion}}</div>
+                                        {{/each}}
                                     </div>
 
 
@@ -211,3 +202,11 @@
                         </div>
                     </div>
                 </div>
+
+    <div class="container p-4" id="vino">
+        <h3>Error en formato</h3>
+        <p>Si los datos del formato se encuentran incorrectos y no se modificaron al reenviar el formulario
+            puedes descargar el formato y llenarlo manualmente dando click en el botón.
+        </p>
+                <a href="/DOCS/123.docx" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="AltaBaja.docx">Descargar manual</a>
+    </div>

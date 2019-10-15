@@ -1,29 +1,75 @@
-
-.entry{
-    display: flex;
+ /******PARA TODOS LA PAGINA ******/
+#headline, #texto{
+    margin:0px;
+    padding: 0px;
+    color: white;
+    font-family: arial;
+    text-align: center;
 }
 
-.primeraParte{
-    float: left;
-    width: 22.85714%;
-float: left;
-margin-right: 2.85714%;
+/**********************************PARA LA IAMGEN******************************/
+div#imagen{
+    width: 400px;
+    height: 400px;
+    margin: 40px;
+    background: url(../IMAGENES/perritos-tiernos.jpg);
 }
-
-.secondPart{
-    float: left;
-    border: 20px;
-    width: 74.28571%;
-margin-right: 2.85714%;
+ /******PRA DIV(LA IMAGEN qUE PARARECERA SOBRE NUESTRA IMAGEN PRINCIPAL)******/
+div#info{
+    position: absolute;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(31,31,31,0.9);
+    -webkit-transition: opacity 0.2s;
+    opacity: 0;
 }
-.name{
-    font-size: 1.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    text-transform: none !important;
-
-text-shadow: none;
+div#imagen:hover div#info{
+    opacity: 1;
 }
+/************************PARA EL PRIMER PARRAFO*******************************/
+p#headline{/*donde empieza el texto*/
+    position: absolute;
+    text-align: center;
+    margin-top:20px;
+    -webkit-transition: margin 0.2s;/*animacion*/
+    margin-left:-70px;
+    font-size: 21px;
+}/*donde llegara el texto*/
+div#imagen:hover p#headline{
+    margin-left: 70px; 
+}
+/***************************PARA EL SEGUNDO PARRAFO**************************/
+p#texto{/*donde empieza el texto*/
+    position: auto;
+    width: 500px;/*cuanto tiene de ancho*/
+    text-align: center;
+    -webkit-transition: margin 0.2s;/*animacion*/
+    margin-top:160px;
+    font-size: 21px;
+}/*hasta donde lo va a llevar*/
+div#imagen:hover p#texto{
+    margin-top:60px;
+}
+/***************************PArA EL BOTON************************************/
+#navegador ul{
+    list-style-type: none;
+    text-align: center;
+ }
+ #navegador li{
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0;
+ }
+ #navegador li a {
+    padding: 2px 7px 2px 7px;
+    color: #666;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+    text-decoration: none;
+ }
+ #navegador li a:hover{
+    background-color: #333333;
+    color: #ffffff;
+ }
 
