@@ -64,7 +64,6 @@ router.get('/index',  (req, res)=>{
 // ENVIO DE INFO EQUIPOS/COMPUTO
 router.post('/equipos/computo', (req, res)=>{
               
-      console.log(req.body);
 });
 
 //LOGIN

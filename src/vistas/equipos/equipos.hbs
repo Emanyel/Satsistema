@@ -43,8 +43,8 @@
         <a href="/DOCS/123.docx" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="AltaBaja.docx">Descargar manual</a>
         
     </div>
-    <div class="container p-4" id="vino">
-        <form class="form" method="POST" action="/equipos/computo">
+    <div class="container p-4"  id="formulario">
+        <form class="form" id="equiposForm" method="POST" action="/equipos/computo">
             <div class="flexbox">
                 <div class="container p-4" id="destino">
                         <h3>Datos de destino</h3>
@@ -82,10 +82,16 @@
                 </div> 
             </div>
             <div>
-                <button  type="submit" class="btn btn-success">ENVIAR DATOS</button>
+                <button  type="button" id="equiposButton" class="btn btn-success">ENVIAR DATOS</button>
             </div>
         </form>
-    </div>            
+    </div>
+    <div id="exito" style="display:none">
+            Sus datos han sido recibidos con éxito.
+        </div>
+        <div id="fracaso" style="display:none">
+            Se ha producido un error durante el envío de datos.
+        </div>           
                 <div class="container p-4" id="cafe">
                     <h3>Verificar datos</h3>
                     <p>Verifica el formulario que a continuación se muestra. Seleccione el equipo que desee reubicar. Da click en corregir si los datos son erróneos.</p>
