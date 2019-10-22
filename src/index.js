@@ -54,8 +54,10 @@ app.use(passport.session()); //PARA PODER MANEJAR LOS DATOS POR SESION
 */
 
 // variables globales
-
-
+app.use((req, res, next)=>{
+    app.locals.localidad = req.localidad;
+    next();
+});
 // rutas url del servidor
 //app.use(require('./rutas'));
 app.use(require('./rutas/authentication'));
