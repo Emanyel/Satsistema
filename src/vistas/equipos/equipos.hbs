@@ -43,7 +43,7 @@
         <a href="/DOCS/123.docx" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" download="AltaBaja.docx">Descargar manual</a>
         
     </div>
-    <div class="container p-4"  id="formulario">
+    <div class="container p-4"  id="vino">
         <form class="form" id="equiposForm" method="POST" action="/equipos/computo">
             <div class="flexbox">
                 <div class="container p-4" id="destino">
@@ -82,7 +82,7 @@
                 </div> 
             </div>
             <div>
-                <button  type="button" id="equiposButton" class="btn btn-success">ENVIAR DATOS</button>
+                <button  type="submit" id="equiposButton" class="btn btn-success">ENVIAR DATOS</button>
             </div>
         </form>
     </div>
@@ -142,7 +142,7 @@
                                 <strong><h2 align="left">Origen </h2></strong>
                                     <div id="origen">
                                         <p align="left">ID Localidad:</p><div></div>
-                                        <p align="left">Nombre Localidad</p><div></div> 
+                                        <p align="left">Nombre Localidad</p><div>{{localidad}}</div> 
                                         <p align="left">Administracion General:</p><div></div>
                                         <p align="left">Area</p><div></div>
                                         <p align="left">Estado:</p><div></div>
