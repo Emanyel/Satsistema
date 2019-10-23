@@ -1,9 +1,7 @@
 <?php
-$equipos = json_decode(file_get_contents("php://input"));
+$localidad = $_POST["localidad"]);
 
-$localidad = $equipos->localidad;
-$mensaje = "Localidad: $localidad";
-echo " json_encode($mensaje)";
+print_r($localidad);
 
 
 ?>      
